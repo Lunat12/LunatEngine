@@ -1,65 +1,65 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\",
+  "WorkspaceRootPath": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Exercise4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Exercise4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Exercise4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleSamplers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleD3D12.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleD3D12.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleResources.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleResources.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleResources.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\VertexShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\VertexShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:VertexShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\PixelShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\PixelShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:PixelShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleSamplers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleShaderDescriptors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleShaderDescriptors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleShaderDescriptors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1EEA1523-1CAF-4CA4-97B8-1C77FF6F7D9E}|Engine.vcxproj|solutionrelative:ModuleInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -76,87 +76,81 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Application.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.cpp",
               "RelativeDocumentMoniker": "Application.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.cpp",
               "RelativeToolTip": "Application.cpp",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAEIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-18T19:06:51.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T19:06:51.721Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "ModuleD3D12.h",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.h",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.h",
               "RelativeDocumentMoniker": "ModuleD3D12.h",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.h",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.h",
               "RelativeToolTip": "ModuleD3D12.h",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-17T17:12:36.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T17:12:36.899Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "ModuleD3D12.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.cpp",
               "RelativeDocumentMoniker": "ModuleD3D12.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleD3D12.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleD3D12.cpp",
               "RelativeToolTip": "ModuleD3D12.cpp",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-17T17:10:30.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T17:10:30.388Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "PixelShader.hlsl",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\PixelShader.hlsl",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\PixelShader.hlsl",
               "RelativeDocumentMoniker": "PixelShader.hlsl",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\PixelShader.hlsl",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\PixelShader.hlsl",
               "RelativeToolTip": "PixelShader.hlsl",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-12-17T16:53:36.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T16:53:36.08Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "VertexShader.hlsl",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\VertexShader.hlsl",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\VertexShader.hlsl",
               "RelativeDocumentMoniker": "VertexShader.hlsl",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\VertexShader.hlsl",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\VertexShader.hlsl",
               "RelativeToolTip": "VertexShader.hlsl",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-12-17T16:53:26.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T16:53:26.704Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "ModuleResources.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleResources.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleResources.cpp",
               "RelativeDocumentMoniker": "ModuleResources.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleResources.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleResources.cpp",
               "RelativeToolTip": "ModuleResources.cpp",
               "ViewState": "AgIAAFgAAAAAAAAAAADgv2QAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-17T15:16:51.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:16:51.451Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "ModuleInput.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleInput.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleInput.cpp",
               "RelativeDocumentMoniker": "ModuleInput.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleInput.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleInput.cpp",
               "RelativeToolTip": "ModuleInput.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -166,76 +160,71 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "ModuleShaderDescriptors.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleShaderDescriptors.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleShaderDescriptors.cpp",
               "RelativeDocumentMoniker": "ModuleShaderDescriptors.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleShaderDescriptors.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleShaderDescriptors.cpp",
               "RelativeToolTip": "ModuleShaderDescriptors.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-17T15:16:01.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:16:01.938Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ModuleSamplers.h",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.h",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.h",
               "RelativeDocumentMoniker": "ModuleSamplers.h",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.h",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.h",
               "RelativeToolTip": "ModuleSamplers.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-17T15:15:46.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:15:46.792Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "ModuleSamplers.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.cpp",
               "RelativeDocumentMoniker": "ModuleSamplers.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\ModuleSamplers.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\ModuleSamplers.cpp",
               "RelativeToolTip": "ModuleSamplers.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-17T15:15:33.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:15:33.536Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Timer.h",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.h",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.h",
               "RelativeDocumentMoniker": "Timer.h",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.h",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.h",
               "RelativeToolTip": "Timer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-14T14:10:21.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-14T14:10:21.164Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Timer.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.cpp",
               "RelativeDocumentMoniker": "Timer.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Timer.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Timer.cpp",
               "RelativeToolTip": "Timer.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-14T13:55:50.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-14T13:55:50.771Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Exercise4.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Exercise4.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Exercise4.cpp",
               "RelativeDocumentMoniker": "Exercise4.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Exercise4.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Exercise4.cpp",
               "RelativeToolTip": "Exercise4.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-14T13:40:44.534Z",
               "EditorCaption": ""
@@ -244,27 +233,25 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Engine.cpp",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Engine.cpp",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Engine.cpp",
               "RelativeDocumentMoniker": "Engine.cpp",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Engine.cpp",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Engine.cpp",
               "RelativeToolTip": "Engine.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-17T15:13:25.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:13:25.87Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Application.h",
-              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.h",
+              "DocumentMoniker": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.h",
               "RelativeDocumentMoniker": "Application.h",
-              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\Engine\\Source\\Application.h",
+              "ToolTip": "C:\\Users\\Lunat\\Downloads\\Engine\\First-Assignment_LunatEngine\\LunatEngine_v00\\Source\\Application.h",
               "RelativeToolTip": "Application.h",
               "ViewState": "AgIAACoAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-17T15:12:53.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T15:12:53.04Z"
             }
           ]
         }

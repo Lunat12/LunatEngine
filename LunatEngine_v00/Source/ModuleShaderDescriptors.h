@@ -11,6 +11,7 @@ public:
 	inline UINT getHandle() { return handle - 1; };
 
 	void createTextureSRV(ID3D12Resource* resource);
+	UINT createNullTexture2DSRV();
 
 	inline D3D12_GPU_DESCRIPTOR_HANDLE GetGPUHandle(UINT slot) { return CD3DX12_GPU_DESCRIPTOR_HANDLE(gpuStart, slot, descriptorSize); };
 	inline D3D12_CPU_DESCRIPTOR_HANDLE GetCPUHandle(UINT slot) { return CD3DX12_CPU_DESCRIPTOR_HANDLE(cpuStart, slot, descriptorSize); };
