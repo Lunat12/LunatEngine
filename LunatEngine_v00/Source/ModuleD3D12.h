@@ -19,16 +19,16 @@ public:
     UINT signalDrawQueue();
     
 
-    inline ID3D12Device5* getDevice() { return device.Get(); };
-    inline ID3D12GraphicsCommandList* getCommandList() { return commandList.Get(); };
-    inline ID3D12CommandAllocator* getCommandAllocator() { return commandAllocators[currenBackBufferIndex].Get(); };
-    inline ID3D12Resource* getBackBuffer() { return backBuffers[currenBackBufferIndex].Get(); };
+    ID3D12Device5* getDevice() { return device.Get(); };
+    ID3D12GraphicsCommandList* getCommandList() { return commandList.Get(); };
+    ID3D12CommandAllocator* getCommandAllocator() { return commandAllocators[currenBackBufferIndex].Get(); };
+    ID3D12Resource* getBackBuffer() { return backBuffers[currenBackBufferIndex].Get(); };
     D3D12_CPU_DESCRIPTOR_HANDLE getRenderTargetDescriptor();
     D3D12_CPU_DESCRIPTOR_HANDLE getDepthStencilDescriptor();
-    inline ID3D12CommandQueue* getCommandQueue() { return commandQueue.Get(); };
-    inline unsigned getWindowWidth() { return windowWidth; }
-    inline unsigned getWindowHeight() { return windowHeight; }
-    inline HWND getWindowHandler() { return windowHandler; }
+    ID3D12CommandQueue* getCommandQueue() { return commandQueue.Get(); };
+    unsigned getWindowWidth() { return windowWidth; }
+    unsigned getWindowHeight() { return windowHeight; }
+    HWND getWindowHandler() { return windowHandler; }
 
 
 private:

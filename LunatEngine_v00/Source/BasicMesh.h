@@ -3,7 +3,7 @@
 #define TINYGLTF_NO_STB_IMAGE_WRITE
 #define TINYGLTF_NO_STB_IMAGE
 #define TINYGLTF_NO_EXTERNAL_IMAGE
-#include "tiny_gltf.h"
+#include "tiny_gltf.h"	
 
 namespace tinygltf { class Model; struct Mesh; struct Primitive; }
 
