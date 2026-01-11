@@ -1,5 +1,6 @@
 # First-Assignment_LunatEngine
-First game Engine Assigment for the masters degree Github:https://github.com/Lunat12/First-Assignment_LunatEngine.git
+Second game Engine Assigment for the masters degree: Now you theres a duck model loaded.
+Github:https://github.com/Lunat12/First-Assignment_LunatEngine.git
 
     Camera controls:
     While Right-clicking, WASD fps-like movement and free look around must be enabled.
