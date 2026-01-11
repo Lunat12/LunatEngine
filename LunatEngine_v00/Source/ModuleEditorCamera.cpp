@@ -174,7 +174,7 @@ void ModuleEditorCamera::LookAt(float x, float y, float z)
     view = Matrix::CreateLookAt(Vector3(x, y, z), Vector3::Zero, Vector3::Up);
 }
 
-const Matrix ModuleEditorCamera::GetProjectionMatrix()
+const Matrix ModuleEditorCamera::GetProjectionMatrix(float aspect)
 {
     return Matrix::CreatePerspectiveFieldOfView(fov, aspect, nearPlane, farPlane);
 }

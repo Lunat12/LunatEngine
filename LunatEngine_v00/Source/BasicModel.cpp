@@ -9,7 +9,7 @@
 #define TINYGLTF_IMPLEMENTATION /* Only in one of the includes */
 #include "tiny_gltf.h"
 
-void BasicModel::Load(const char* filename, const char* basePath)
+void BasicModel::Load(const char* filename, const char* basePath, BasicMaterial::Type materialType)
 {
 	tinygltf::TinyGLTF gltfContext;
 	tinygltf::Model model;
@@ -18,7 +18,7 @@ void BasicModel::Load(const char* filename, const char* basePath)
 	if (loadOk)
 	{
 		LoadMeshes(model);
-		LoadMaterials(model, basePath);
+		LoadMaterials(model, basePath, materialType);
 	}
 	else LOG("Error loading %s: %s", filename, error.c_str());
 }
@@ -49,7 +49,7 @@ void BasicModel::LoadMeshes(const tinygltf::Model& model)
 	}
 }
 
-void BasicModel::LoadMaterials(const tinygltf::Model& model, const char* basepath)
+void BasicModel::LoadMaterials(const tinygltf::Model& model, const char* basepath, BasicMaterial::Type materialType)
 {
 	ModuleShaderDescriptors* descriptors = app->getShaderDescriptors();
 	ModuleResources* resources = app->getResources();
@@ -60,6 +60,6 @@ void BasicModel::LoadMaterials(const tinygltf::Model& model, const char* basepat
 	int materialIndex = 0;
 	for (const tinygltf::Material& material : model.materials) 
 	{
-		materials[materialIndex++].Load(model, material, basepath);
+		materials[materialIndex++].Load(model, material, materialType, basepath);
 	}
 }

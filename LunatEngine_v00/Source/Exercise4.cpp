@@ -27,7 +27,7 @@ bool Exercise4::init()
 
         if ((ok = textureDog) == true) 
         {
-            descriptors->createTextureSRV(textureDog.Get());
+            descriptors->createTextureSRV(textureDog.Get(),0);
         }
     }
 
@@ -106,9 +106,12 @@ void Exercise4::preRender()
     imguiPass->startFrame();
     commandList->Reset(d3d12->getCommandAllocator(), pso.Get());
 
+    LONG width = (LONG)d3d12->getWindowWidth();
+    LONG height = (LONG)d3d12->getWindowHeight();
+
     Matrix model = Matrix::Identity;
     view = camera->GetViewMatrix();
-    proj = camera->GetProjectionMatrix();
+    proj = camera->GetProjectionMatrix(float(width) / float(height));
 
     mvp = (model * view * proj).Transpose();
     commandList->SetGraphicsRootSignature(rootSignature.Get());

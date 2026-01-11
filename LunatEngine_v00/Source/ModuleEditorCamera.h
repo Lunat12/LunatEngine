@@ -16,7 +16,7 @@ public:
 	const Vector3& Position() { return position; };
 	const Quaternion& Orientation() { return rotation; }
 	void LookAt(float, float, float);
-	const Matrix GetProjectionMatrix();
+	const Matrix GetProjectionMatrix(float aspect);
 	const Matrix& GetViewMatrix() { return view; }
 	virtual bool init() override;
 	virtual void update() override;

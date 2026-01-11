@@ -1,1 +1,2 @@
 C:\Users\Lunat\Downloads\Engine\Engine\Source\3rdParty\DirectXTex\Bin\Desktop_2022_Win10\x64\Release\DirectXTex.lib
+C:\Users\Lunat\Downloads\Engine\First-Assignment_LunatEngine\LunatEngine_v00\Source\3rdParty\DirectXTex\Bin\Desktop_2022_Win10\x64\Release\DirectXTex.lib

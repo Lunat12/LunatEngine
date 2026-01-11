@@ -43,12 +43,12 @@ ComPtr<ID3D12Resource> ModuleResources::CreateUploadHeap(size_t bufferSize)
 	auto resourceDesc = CD3DX12_RESOURCE_DESC::Buffer(bufferSize);
 	ID3D12Device5* device = d3d12->getDevice();
 	ComPtr<ID3D12Resource> buffer;
-	device->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_COMMON, nullptr, IID_PPV_ARGS(&buffer));
+	device->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_GENERIC_READ, nullptr, IID_PPV_ARGS(&buffer));
 
 	return buffer;
 }
 
-ComPtr<ID3D12Resource> ModuleResources::CreateDefaultBuffer(void* data, size_t bufferSize)
+ComPtr<ID3D12Resource> ModuleResources::CreateDefaultBuffer(const void* data, size_t bufferSize)
 {
 	ID3D12Device5* device = d3d12->getDevice();
 	ID3D12CommandQueue* commandQueue = d3d12->getCommandQueue();
@@ -59,7 +59,7 @@ ComPtr<ID3D12Resource> ModuleResources::CreateDefaultBuffer(void* data, size_t b
 	// --- CREATE THE FINAL GPU BUFFER (DEFAULT HEAP) ---
 	CD3DX12_HEAP_PROPERTIES heapProperties = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
 	CD3DX12_RESOURCE_DESC resourceDesc = CD3DX12_RESOURCE_DESC::Buffer(bufferSize);
-	device->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_COPY_DEST, nullptr, IID_PPV_ARGS(&buffer));
+	device->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_COMMON, nullptr, IID_PPV_ARGS(&buffer));
 	
 	// --- CREATE THE STAGING BUFFER (UPLOAD HEAP) ---
 	heapProperties = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
@@ -68,7 +68,7 @@ ComPtr<ID3D12Resource> ModuleResources::CreateDefaultBuffer(void* data, size_t b
 	MapBuffer(data, bufferSize, stagingBuffer);
 	// --- GPU: COPY DATA ---
 	//UDar su propia command list y command allocator. separar ejercicios.
-	commandList->CopyResource(buffer.Get(), stagingBuffer.Get());
+	commandList->CopyBufferRegion(buffer.Get(), 0, stagingBuffer.Get(), 0, bufferSize);
 
 	commandList->Close();
 	ID3D12CommandList* commandLists[] = { commandList.Get()};
@@ -84,7 +84,7 @@ ComPtr<ID3D12Resource> ModuleResources::CreateDefaultBuffer(void* data, size_t b
 	return buffer;
 }
 
-void ModuleResources::MapBuffer(void* data, size_t dataSize, ComPtr<ID3D12Resource> resource)
+void ModuleResources::MapBuffer(const void* data, size_t dataSize, ComPtr<ID3D12Resource> resource)
 {
 	// Map the buffer: get a CPU pointer to its memory
 	BYTE* pData = nullptr;
@@ -103,7 +103,7 @@ ComPtr<ID3D12Resource> ModuleResources::CreateTextureFromFile(const std::filesys
 	DirectX::ScratchImage image;
 	bool ok = SUCCEEDED(LoadFromDDSFile(filename, DDS_FLAGS_NONE, nullptr, image));
 	ok = ok || SUCCEEDED(LoadFromTGAFile(filename, nullptr, image));
-	ok = ok || SUCCEEDED(LoadFromWICFile(filename, WIC_FLAGS_NONE, nullptr, image));
+	ok = ok || SUCCEEDED(LoadFromWICFile(filename, WIC_FLAGS_DEFAULT_SRGB, nullptr, image));
 	
 	if (ok) return CreateTextureFromImage(image, path.string().c_str()); 
 
@@ -127,7 +127,11 @@ ComPtr<ID3D12Resource> ModuleResources::CreateTextureFromImage(const ScratchImag
 		ComPtr<ID3D12Resource> upload;
 		if (ok) 
 		{
-			UINT64 size = GetRequiredIntermediateSize(texture.Get(), 0, image.GetImageCount());
+			_ASSERTE(metadata.mipLevels * metadata.arraySize == image.GetImageCount());
+			upload = CreateUploadHeap(GetRequiredIntermediateSize(texture.Get(), 0, UINT(image.GetImageCount())));
+			ok = upload != nullptr;
+
+			/*UINT64 size = GetRequiredIntermediateSize(texture.Get(), 0, image.GetImageCount());
 
 			CD3DX12_HEAP_PROPERTIES heapProps = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
 			CD3DX12_RESOURCE_DESC desc = CD3DX12_RESOURCE_DESC::Buffer(size);
@@ -135,7 +139,7 @@ ComPtr<ID3D12Resource> ModuleResources::CreateTextureFromImage(const ScratchImag
 
 			device->CreateCommittedResource(&heapProps, D3D12_HEAP_FLAG_NONE, &desc, D3D12_RESOURCE_STATE_GENERIC_READ, nullptr, IID_PPV_ARGS(&upload));
 			
-			ok = upload != nullptr;
+			ok = upload != nullptr;*/
 		}
 
 		if (ok)

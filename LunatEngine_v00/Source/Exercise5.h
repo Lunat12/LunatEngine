@@ -3,6 +3,7 @@
 #include "DebugDrawPass.h"
 #include <ImGuiPass.h>
 #include "ModuleSamplers.h"
+#include "BasicModel.h"
 
 class Exercise5 : public Module
 {
@@ -23,6 +24,8 @@ private:
 	Matrix view;
 	ComPtr<ID3D12Resource> textureDog;
 	Matrix mvp;
+	std::unique_ptr<BasicModel> model;
+	std::vector<ComPtr<ID3D12Resource>> materialBuffers;
 
 	bool showGrid = true;
 	bool showAxis = true;
@@ -33,6 +36,7 @@ private:
 	bool createVertexBuffer();
 	bool createRootSignature();
 	bool createPSO();
+	bool loadModel();
 };
 
 

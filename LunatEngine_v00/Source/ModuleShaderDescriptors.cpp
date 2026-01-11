@@ -26,13 +26,13 @@ bool ModuleShaderDescriptors::init()
 }
 
 
-void ModuleShaderDescriptors::createTextureSRV(ID3D12Resource* resource)
+void ModuleShaderDescriptors::createTextureSRV(ID3D12Resource* resource, UINT8 slot)
 {
    
     if (resource)
     {
-        D3D12_CPU_DESCRIPTOR_HANDLE slot = CD3DX12_CPU_DESCRIPTOR_HANDLE(cpuStart, handle, descriptorSize);
-        app->getD3D12()->getDevice()->CreateShaderResourceView(resource, nullptr, slot);
+        ModuleShaderDescriptors* descriptors = app->getShaderDescriptors();
+        app->getD3D12()->getDevice()->CreateShaderResourceView(resource, nullptr, descriptors->GetCPUHandle(slot));
     }
 
     handle++;
@@ -40,7 +40,6 @@ void ModuleShaderDescriptors::createTextureSRV(ID3D12Resource* resource)
 
 UINT ModuleShaderDescriptors::createNullTexture2DSRV()
 {
-    _ASSERTE(current < count);
     UINT index = handle++;
     D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
     srvDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM; // Standard format

@@ -7,9 +7,11 @@
 #define TINYGLTF_NO_EXTERNAL_IMAGE
 #include "tiny_gltf.h"
 
-void BasicMaterial::Load(const tinygltf::Model& model, const tinygltf::Material& material, const char* basepath)
+void BasicMaterial::Load(const tinygltf::Model& model, const tinygltf::Material& material, Type type, const char* basepath)
 {
 	name = material.name;
+
+	materialType = type;
 
 	Vector4 baseColor = Vector4(float(material.pbrMetallicRoughness.baseColorFactor[0]),
 		float(material.pbrMetallicRoughness.baseColorFactor[1]),
@@ -38,16 +40,27 @@ void BasicMaterial::Load(const tinygltf::Model& model, const tinygltf::Material&
 
 	hasColourTexture = loadTexture(material.pbrMetallicRoughness.baseColorTexture.index, model, basepath, true, basecColourTex);
 
-	pbrPhong.difuseColor = XMFLOAT3(baseColor.x, baseColor.y, baseColor.z);
-	pbrPhong.hasDefuseTex = hasColourTexture;
-	pbrPhong.shininess = 64.0f;
-	pbrPhong.specularColor = XMFLOAT3(0.015f, 0.015f, 0.015f);
+	if (materialType == BASIC) 
+	{
+		materialData.basic.baseColor = baseColor;
+		materialData.basic.hasColorTexture = hasColourTexture;
+	}
+	else if(materialType == PBR_PHONG)
+	{
+		materialData.pbrPhong.difuseColor = XMFLOAT3(baseColor.x, baseColor.y, baseColor.z);
+		materialData.pbrPhong.hasDefuseTex = hasColourTexture;
+		materialData.pbrPhong.shininess = 64.0f;
+		materialData.pbrPhong.specularColor = XMFLOAT3(0.015f, 0.015f, 0.015f);
+	}
+	
 
 	ModuleShaderDescriptors* descriptors = app->getShaderDescriptors();
 
+	textureTableDesc = descriptors->GetGPUHandle((UINT8)0u);
+
 	if (hasColourTexture) 
 	{
-		descriptors->createTextureSRV(basecColourTex.Get());
+		descriptors->createTextureSRV(basecColourTex.Get(), 0);
 	}
 	else 
 	{

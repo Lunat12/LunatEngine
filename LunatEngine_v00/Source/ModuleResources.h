@@ -13,8 +13,8 @@ public:
 	void render() override;
 	ComPtr<ID3D12Resource> CreateUploadBuffer(void* data, size_t bufferSize);
 	ComPtr<ID3D12Resource> CreateUploadHeap(size_t bufferSize);
-	ComPtr<ID3D12Resource> CreateDefaultBuffer(void* data, size_t bufferSize);
-	void MapBuffer(void* data, size_t dataSize, ComPtr<ID3D12Resource> resource);
+	ComPtr<ID3D12Resource> CreateDefaultBuffer(const void* data, size_t bufferSize);
+	void MapBuffer(const void* data, size_t dataSize, ComPtr<ID3D12Resource> resource);
 	ComPtr<ID3D12Resource> CreateTextureFromFile(const std::filesystem::path& path);
 	ComPtr<ID3D12Resource> CreateTextureFromImage(const ScratchImage& image, const char* name);
 

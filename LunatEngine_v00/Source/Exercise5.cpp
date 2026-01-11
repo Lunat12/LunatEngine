@@ -9,30 +9,20 @@
 #include "ModuleShaderDescriptors.h"
 #include "ModuleSamplers.h"
 #include "Timer.h"
+#include "BasicMesh.h"
+#include "BasicModel.h"
 
 bool Exercise5::init()
 {
-    ModuleD3D12* d3d12 = app->getD3D12();
-    bool ok = createVertexBuffer();
-    ok = ok && createRootSignature();
+    bool ok = createRootSignature();
     ok = ok && createPSO();
 
-    if (ok)
-    {
-        ModuleResources* resources = app->getResources();
-        ModuleShaderDescriptors* descriptors = app->getShaderDescriptors();
-
-        std::wstring imageUrl = std::wstring(L"Assets/Textures/dog.dds");
-        textureDog = resources->CreateTextureFromFile(imageUrl);
-
-        if ((ok = textureDog) == true)
-        {
-            descriptors->createTextureSRV(textureDog.Get());
-        }
-    }
+    ok = ok && loadModel();
 
     if (ok)
     {
+        ModuleD3D12* d3d12 = app->getD3D12();
+
         debugDraw = std::make_unique<DebugDrawPass>(d3d12->getDevice(), d3d12->getCommandQueue());
         imguiPass = std::make_unique<ImGuiPass>(d3d12->getDevice(), d3d12->getWindowHandler());
     }
@@ -47,6 +37,9 @@ void Exercise5::render()
     ID3D12GraphicsCommandList* commandList = d3d12->getCommandList();
     ModuleShaderDescriptors* shaderDescriptors = app->getShaderDescriptors();
     ModuleSamplers* samplers = app->getSamplers();
+    ModuleEditorCamera* camera = app->getCamera();
+
+    commandList->Reset(d3d12->getCommandAllocator(), pso.Get());
 
     ImGui::SetNextWindowSize(ImVec2(300, 200), ImGuiCond_FirstUseEver);
     ImGui::Begin("Texture Viewer Options");
@@ -64,6 +57,11 @@ void Exercise5::render()
     D3D12_VIEWPORT viewport{ 0.0, 0.0, float(width), float(height) , 0.0, 1.0 };
     D3D12_RECT scissor{ 0, 0, width, height };
 
+    view = camera->GetViewMatrix();
+    proj = camera->GetProjectionMatrix(float(width) / float(height));
+
+    mvp = (model->GetModelMatrix() * view * proj).Transpose();
+
     D3D12_CPU_DESCRIPTOR_HANDLE rtv = d3d12->getRenderTargetDescriptor();
     D3D12_CPU_DESCRIPTOR_HANDLE dsv = d3d12->getDepthStencilDescriptor();
 
@@ -75,13 +73,24 @@ void Exercise5::render()
     commandList->RSSetViewports(1, &viewport);
     commandList->RSSetScissorRects(1, &scissor);
     commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    commandList->IASetVertexBuffers(0, 1, &vertexBufferView);
+
     ID3D12DescriptorHeap* descriptorHeaps[] = { shaderDescriptors->getHeap(), samplers->getHeap() };
     commandList->SetDescriptorHeaps(2, descriptorHeaps);
     commandList->SetGraphicsRoot32BitConstants(0, sizeof(Matrix) / sizeof(UINT32), &mvp, 0);
-    commandList->SetGraphicsRootDescriptorTable(1, shaderDescriptors->GetGPUHandle(shaderDescriptors->getHandle()));
-    commandList->SetGraphicsRootDescriptorTable(2, samplers->getGPUHandle(ModuleSamplers::Type(sampler)));
-    commandList->DrawInstanced(6, 1, 0, 0);
+    commandList->SetGraphicsRootDescriptorTable(3, samplers->getGPUHandle(ModuleSamplers::Type(sampler)));
+
+    for (const BasicMesh& mesh : model->GetMeshes()) 
+    {
+        if (UINT(mesh.GetMaterialIndex()) < model->GetNumMaterials()) 
+        {
+            const BasicMaterial& material = model->GetMaterials()[mesh.GetMaterialIndex()];
+
+            commandList->SetGraphicsRootConstantBufferView(1, materialBuffers[mesh.GetMaterialIndex()]->GetGPUVirtualAddress());
+            commandList->SetGraphicsRootDescriptorTable(2, material.GetTexturesTableDesc());
+
+            mesh.Draw(commandList);
+        }
+    }
 
     if (showGrid) dd::xzSquareGrid(-10.0f, 10.0f, 0.0f, 1.0f, dd::colors::LightGray); // Grid plane
     if (showAxis) dd::axisTriad(ddConvert(Matrix::Identity), 0.1f, 1.0f); // XYZ axis
@@ -101,19 +110,9 @@ void Exercise5::render()
 void Exercise5::preRender()
 {
     ModuleD3D12* d3d12 = app->getD3D12();
-    ModuleEditorCamera* camera = app->getCamera();
-    ID3D12GraphicsCommandList* commandList = d3d12->getCommandList();
     imguiPass->startFrame();
-    commandList->Reset(d3d12->getCommandAllocator(), pso.Get());
 
-    Matrix model = Matrix::Identity;
-    view = camera->GetViewMatrix();
-    proj = camera->GetProjectionMatrix();
-
-    mvp = (model * view * proj).Transpose();
-    commandList->SetGraphicsRootSignature(rootSignature.Get());
-    commandList->SetGraphicsRoot32BitConstants(0, sizeof(XMMATRIX) / sizeof(UINT32), &mvp, 0);
-
+    //imguizmo
 
 }
 
@@ -148,17 +147,18 @@ bool Exercise5::createRootSignature()
 {
     //create root signature
     CD3DX12_ROOT_SIGNATURE_DESC rootSignatureDesc;
-    CD3DX12_ROOT_PARAMETER rootParameters[3] = {};
+    CD3DX12_ROOT_PARAMETER rootParameters[4] = {};
     CD3DX12_DESCRIPTOR_RANGE srvRange, sampRange;
 
     srvRange.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);
     sampRange.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SAMPLER, ModuleSamplers::COUNT, 0);
 
     rootParameters[0].InitAsConstants((sizeof(Matrix) / sizeof(UINT32)), 0, 0, D3D12_SHADER_VISIBILITY_VERTEX);
-    rootParameters[1].InitAsDescriptorTable(1, &srvRange, D3D12_SHADER_VISIBILITY_PIXEL);
-    rootParameters[2].InitAsDescriptorTable(1, &sampRange, D3D12_SHADER_VISIBILITY_PIXEL);
+    rootParameters[1].InitAsConstantBufferView(1, 0, D3D12_SHADER_VISIBILITY_PIXEL);
+    rootParameters[2].InitAsDescriptorTable(1, &srvRange, D3D12_SHADER_VISIBILITY_PIXEL);
+    rootParameters[3].InitAsDescriptorTable(1, &sampRange, D3D12_SHADER_VISIBILITY_PIXEL);
 
-    rootSignatureDesc.Init(3, rootParameters, 0, nullptr, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
+    rootSignatureDesc.Init(4, rootParameters, 0, nullptr, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
     ComPtr<ID3DBlob> blob;
     if (FAILED(D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, &blob, nullptr))) return false;
@@ -195,7 +195,27 @@ bool Exercise5::createPSO()
     pipelineStateDesc.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
     pipelineStateDesc.BlendState = CD3DX12_BLEND_DESC(D3D12_DEFAULT);
     pipelineStateDesc.NumRenderTargets = 1;
+    pipelineStateDesc.RasterizerState.FrontCounterClockwise = TRUE;
 
 
     return SUCCEEDED(app->getD3D12()->getDevice()->CreateGraphicsPipelineState(&pipelineStateDesc, IID_PPV_ARGS(&pso)));
+}
+
+bool Exercise5::loadModel()
+{
+    model = std::make_unique <BasicModel>();
+    model->Load("Assets/Models/Duck/duck.gltf", "Assets/Models/Duck/", BasicMaterial::BASIC);
+    model->SetModelMatrix(Matrix::CreateScale(0.01f, 0.01f, 0.01f));
+
+    ModuleResources* resources = app->getResources();
+
+    for (int i = 0, count = model->GetNumMaterials(); i < count ; i++)
+    {
+        const BasicMaterial& material = model->GetMaterials()[i];
+        const BasicMaterialData& data = material.GetBasicMaterial();
+
+        materialBuffers.push_back(resources->CreateDefaultBuffer(&data, alignUp(sizeof(BasicMaterialData), D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT)));
+    }
+
+    return true;
 }

@@ -2,10 +2,7 @@
 #include "Application.h"
 #include "ModuleResources.h"
 #include "BasicMesh.h"
-#define TINYGLTF_NO_STB_IMAGE_WRITE
-#define TINYGLTF_NO_STB_IMAGE
-#define TINYGLTF_NO_EXTERNAL_IMAGE
-#include "tiny_gltf.h"
+
 
 void BasicMesh::Load(const tinygltf::Model& model, const tinygltf::Mesh& mesh, const tinygltf::Primitive& primitive)
 {
@@ -25,7 +22,7 @@ void BasicMesh::Load(const tinygltf::Model& model, const tinygltf::Mesh& mesh, c
 		uint8_t* vertexData = reinterpret_cast<uint8_t*>(vertices.get());
 
 		LoadAccessorData(vertexData + offsetof(Vertex, position), sizeof(Vector3), sizeof(Vertex), numVertices, model, itPos->second);
-		LoadAccessorData(vertexData + offsetof(Vertex, texCoord0), sizeof(Vector3), sizeof(Vertex), numVertices, model, primitive.attributes, "TEXCOORD_0");
+		LoadAccessorData(vertexData + offsetof(Vertex, texCoord0), sizeof(Vector2), sizeof(Vertex), numVertices, model, primitive.attributes, "TEXCOORD_0");
 		LoadAccessorData(vertexData + offsetof(Vertex, normal), sizeof(Vector3), sizeof(Vertex), numVertices, model, primitive.attributes, "NORMAL");
 		if (!LoadAccessorData(vertexData + offsetof(Vertex, tangent), sizeof(Vector3), sizeof(Vertex), numVertices, model, primitive.attributes, "TANGENT"))
 		{
@@ -69,12 +66,28 @@ void BasicMesh::Load(const tinygltf::Model& model, const tinygltf::Mesh& mesh, c
 				indexBuffer = resources->CreateDefaultBuffer(indices.get(), numIndices * indexElementSize);
 
 				indexBufferView.BufferLocation = indexBuffer->GetGPUVirtualAddress();
-				indexBufferView.Format = formats[indexElementSize << 1];
+				indexBufferView.Format = formats[indexElementSize >> 1];
 				indexBufferView.SizeInBytes = numIndices * indexElementSize;
 			}
 		}
 
 		materialIndex = primitive.material;
+	}
+}
+
+void BasicMesh::Draw(ID3D12GraphicsCommandList* commandList) const
+{
+	commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	commandList->IASetVertexBuffers(0, 1, &vertexBufferView);
+
+	if (indexBuffer)
+	{
+		commandList->IASetIndexBuffer(&indexBufferView);
+		commandList->DrawIndexedInstanced(numIndices, 1, 0, 0, 0);
+	}
+	else
+	{
+		commandList->DrawInstanced(numVertices, 1, 0, 0);
 	}
 }
 
